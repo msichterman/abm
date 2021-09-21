@@ -16,27 +16,23 @@ export default function Footer() {
                 Contact us
               </a>
             </Link>
-            <a target="_blank" href="https://www.instagram.com/athlete_branding_and_marketing/">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/athlete_branding_and_marketing/"
+            >
               <span className="inline-flex justify-center px-3 py-2 hover:bg-black text-red-600 hover:text-white rounded-md">
-              <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <rect
-                      width="20"
-                      height="20"
-                      x="2"
-                      y="2"
-                      rx="5"
-                      ry="5"
-                    ></rect>
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/>
-                  </svg>
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
+                </svg>
               </span>
             </a>
             <a target="_blank" href="https://twitter.com/GerrodLambrecht">
@@ -55,10 +51,13 @@ export default function Footer() {
             </a>
           </nav>
         </div>
-        <div className="flex align-center w-full px-8 py-6 bg-black">
+        <div className="flex align-center w-full px-8 py-6 bg-gradient-to-r from-gray-800 to-black">
           <p className="mx-auto text-center text-white uppercase tracking-wide text-sm">
             {' '}
-            <span className="font-bold">Athlete Branding & Marketing LLC</span> © 2021. All Rights Reserved.
+            <span className="font-bold">
+              Athlete Branding & Marketing LLC
+            </span>{' '}
+            © 2021. All Rights Reserved.
           </p>
         </div>
       </footer>

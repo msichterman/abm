@@ -5,7 +5,7 @@ import Link from 'next/link'
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="sticky top-0 shadow-md">
+    <div className="sticky top-0 shadow-md z-10">
       <nav className="bg-gradient-to-r from-black to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex items-center justify-between h-20 w-full">
@@ -16,7 +16,9 @@ function Navbar() {
                   src="/red-white-logo.png"
                   alt="ABM Logo"
                 />
-                <span className="ml-4 text-red-600 uppercase tracking-wide text-md font-bold">Athlete Branding & Marketing LLC</span>
+                <span className="hidden ml-4 text-red-600 uppercase tracking-wide text-md lg:text-xl font-extrabold xs:block">
+                  Athlete Branding & Marketing LLC
+                </span>
               </div>
             </Link>
             <div className="hidden md:block">
@@ -30,7 +32,7 @@ function Navbar() {
                   <a className=" hover:bg-gray-200 text-gray-200 hover:text-gray-700 px-3 py-2 rounded-md uppercase tracking-wide text-sm font-bold">
                     About ABM
                   </a>
-                </Link> 
+                </Link>
                 <Link href="/contact">
                   <a className="text-gray-200 hover:bg-gray-200 hover:text-gray-700 px-3 py-2 rounded-md uppercase tracking-wide text-sm font-bold">
                     Contact us

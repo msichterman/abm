@@ -9,36 +9,58 @@ interface Props {
   showMailingList?: boolean
 }
 
-export default function Layout({ children, showBanner = false, showMailingList = false }: Props) {
+export default function Layout({
+  children,
+  showBanner = false,
+  showMailingList = false,
+}: Props) {
   return (
-    <div className="bg-gradient-to-r from-gray-200 to-white min-h-screen flex flex-col justify-between">
+    <div className="bg-gradient-to-r from-gray-100 to-gray-300 min-h-screen flex flex-col justify-between">
       <Head>
-        <meta name="og:title" content="Athlete Branding &
-Marketing LLC" />
+        <meta
+          name="og:title"
+          content="Athlete Branding &
+Marketing LLC"
+        />
         <meta name="og:image" content="/banner.jpg" />
         <meta
           name="og:description"
           content="We help student-athletes maximize their Name, Image, & Likeness (NIL) income opportunities."
         />
-        <title>Athlete Branding &
-Marketing</title>
+        <title>Athlete Branding & Marketing</title>
         <meta
           name="description"
           content="We help student-athletes maximize their Name, Image, & Likeness (NIL) income opportunities."
         />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <Navbar />
-      {showBanner && <img
-              className="object-cover object-center rounded-lg -px-4"
-              alt="hero"
-              loading="lazy"
-              src="/banner.jpg"
-            />}
+      {showBanner && (
+        <img
+          className="object-cover object-center rounded-lg -px-4"
+          alt="hero"
+          loading="lazy"
+          src="/banner.jpg"
+        />
+      )}
       <main className="text-gray-700 px-4 sm:px-8 lg:px-14 max-w-7xl mx-auto container">
         {children}
       </main>
