@@ -4,26 +4,6 @@ import { getTweets } from '../lib/twitter'
 import Layout from '../components/Layout'
 import { OfficeBuildingIcon, AtSymbolIcon } from '@heroicons/react/outline'
 
-const features = [
-  {
-    name: 'The Office',
-    description: '201 N 8th St\n\nSuite 202\nLincoln, NE 68508',
-    icon: OfficeBuildingIcon,
-  },
-  {
-    name: 'Gerrod Lambrecht',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: AtSymbolIcon,
-  },
-  {
-    name: 'Megan Taylor',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: AtSymbolIcon,
-  },
-]
-
 export default function Home({ tweets }) {
   return (
     <Layout>
@@ -41,16 +21,9 @@ export default function Home({ tweets }) {
               (NIL) income opportunities.
             </p>
             <div className="mt-5 md:mt-8 md:flex justify-center w-full">
-              <div className="rounded-md shadow">
-                <Link href="/about">
-                  <div className="w-full cursor-pointer flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 md:py-4 md:text-lg md:px-10">
-                    Learn more
-                  </div>
-                </Link>
-              </div>
-              <div className="mt-3 md:mt-0 md:ml-4">
+              <div className="mx-6">
                 <Link href="/contact">
-                  <div className="w-full cursor-pointer flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 md:py-4 md:text-lg md:px-10">
+                  <div className="w-full cursor-pointer flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 md:py-4 md:text-lg md:px-16">
                     Contact us
                   </div>
                 </Link>
@@ -84,21 +57,56 @@ export default function Home({ tweets }) {
 
             <div className="mt-10">
               <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative">
-                    <dt>
-                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
-                        <feature.icon className="h-6 w-6" aria-hidden="true" />
-                      </div>
-                      <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                        {feature.name}
-                      </p>
-                    </dt>
-                    <dd className="mt-2 ml-16 text-base text-gray-500">
-                      {feature.description}
-                    </dd>
-                  </div>
-                ))}
+                <div className="relative">
+                  <dt>
+                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                      <OfficeBuildingIcon
+                        className="h-6 w-6"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                      The Office
+                    </p>
+                  </dt>
+                  <dd className="mt-2 ml-16 text-base text-gray-500">
+                    201 N 8th St <br />
+                    Suite 202 <br />
+                    Lincoln, NE 68508
+                  </dd>
+                </div>
+
+                <div className="relative">
+                  <dt>
+                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                      <AtSymbolIcon className="h-6 w-6" aria-hidden="true" />
+                    </div>
+                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                      Gerrod Lambrecht
+                    </p>
+                  </dt>
+                  <dd className="mt-2 ml-16 text-base text-gray-500">
+                    <a href="tel:+14022191580">(402) 219-1580</a>
+                    <br />
+                    <a href="mailto:gerrod@abmusa.org">gerrod@abmusa.org</a>
+                  </dd>
+                </div>
+
+                <div className="relative">
+                  <dt>
+                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                      <AtSymbolIcon className="h-6 w-6" aria-hidden="true" />
+                    </div>
+                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                      Megan Taylor
+                    </p>
+                  </dt>
+                  <dd className="mt-2 ml-16 text-base text-gray-500">
+                    <a href="tel:+13215433760">(321) 543-3760</a>
+                    <br />
+                    <a href="mailto:megan@abmusa.org">megan@abmusa.org</a>
+                  </dd>
+                </div>
               </dl>
             </div>
           </div>
@@ -129,6 +137,8 @@ export async function getStaticProps() {
     '1428807037849329664',
     '1438576669988642816',
     '1435673108611014667',
+    '1444809342583181314',
+    '1446212840596152335',
   ])
 
   return { props: { tweets } }

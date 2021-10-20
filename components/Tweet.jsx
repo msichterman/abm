@@ -23,7 +23,23 @@ export default function Tweet({
   const tweetUrl = `https://twitter.com/${author.username}/status/${id}`
   const createdAt = new Date(created_at)
 
-  const formattedText = text.replace(/https:\/\/[\n\S]+/g, '')
+  const formattedText = text.replace(/&amp;/g, '&')
+  const urlRegex =
+    /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi
+  function linkify(text) {
+    return text.replace(urlRegex, function (url) {
+      return (
+        '<a style="color:rgb(29, 155, 240)" target="_blank" rel="noopener noreferrer" href="' +
+        url +
+        '">' +
+        url +
+        '</a>'
+      )
+    })
+  }
+  function createMarkup() {
+    return { __html: linkify(formattedText) }
+  }
   const quoteTweet =
     referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted')
 
@@ -91,9 +107,10 @@ export default function Tweet({
           </svg>
         </a>
       </div>
-      <div className="mt-4 mb-1 leading-normal whitespace-pre-wrap text-lg text-gray-700 dark:text-gray-300">
-        {formattedText}
-      </div>
+      <div
+        className="mt-4 mb-1 leading-normal whitespace-pre-wrap text-lg text-gray-700 dark:text-gray-300"
+        dangerouslySetInnerHTML={createMarkup()}
+      />
       {media && media.length ? (
         <div className="inline-grid grid-cols-2 gap-x-2 gap-y-2 my-2">
           {media.map((m) => (
