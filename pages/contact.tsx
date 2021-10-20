@@ -1,30 +1,24 @@
-import { useState } from 'react'
 import Layout from '../components/Layout'
 
 export default function contact() {
-  const initialState = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    company: '',
-    message: '',
-  }
-
-  const [form, setForm] = useState(initialState)
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    console.log(value)
-    setForm({ ...form, [name]: value })
-  }
-
   return (
     <Layout showBanner>
       <div className="flex flex-col w-full items-center justify-center">
         <h1 className="uppercase tracking-wide text-3xl lg:text-5xl font-extrabold block my-12">
           Contact us
         </h1>
-        <form className="w-full max-w-lg mb-12">
+        <form
+          className="w-full max-w-lg mb-12"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <label className="hidden">
+            Don’t fill this out if you’re human:
+            <input name="bot-field" />
+          </label>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
@@ -38,8 +32,6 @@ export default function contact() {
                 id="firstName"
                 name="firstName"
                 type="text"
-                value={form.firstName}
-                onChange={(e) => handleChange(e)}
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -54,8 +46,6 @@ export default function contact() {
                 id="lastName"
                 name="lastName"
                 type="text"
-                value={form.lastName}
-                onChange={(e) => handleChange(e)}
               />
             </div>
           </div>
@@ -72,8 +62,6 @@ export default function contact() {
                 id="email"
                 name="email"
                 type="email"
-                value={form.email}
-                onChange={(e) => handleChange(e)}
               />
             </div>
           </div>
@@ -90,8 +78,6 @@ export default function contact() {
                 id="company"
                 name="company"
                 type="text"
-                value={form.company}
-                onChange={(e) => handleChange(e)}
               />
             </div>
           </div>
@@ -107,8 +93,6 @@ export default function contact() {
                 className=" no-resize appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:ring-gray-500 focus:border-gray-500 h-48 resize-none"
                 id="message"
                 name="message"
-                value={form.message}
-                onChange={(e) => handleChange(e)}
               ></textarea>
             </div>
           </div>
@@ -116,8 +100,7 @@ export default function contact() {
             <div className="md:w-1/3">
               <button
                 className="shadow bg-red-600 hover:bg-red-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                type="button"
-                onClick={() => console.log(form)}
+                type="submit"
               >
                 Send
               </button>
