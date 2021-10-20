@@ -32,6 +32,7 @@ export default function contact() {
                 id="firstName"
                 name="firstName"
                 type="text"
+                required
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -46,6 +47,7 @@ export default function contact() {
                 id="lastName"
                 name="lastName"
                 type="text"
+                required
               />
             </div>
           </div>
@@ -62,6 +64,7 @@ export default function contact() {
                 id="email"
                 name="email"
                 type="email"
+                required
               />
             </div>
           </div>
@@ -93,6 +96,7 @@ export default function contact() {
                 className=" no-resize appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:ring-gray-500 focus:border-gray-500 h-48 resize-none"
                 id="message"
                 name="message"
+                required
               ></textarea>
             </div>
           </div>
