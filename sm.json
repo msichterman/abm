@@ -1,0 +1,6 @@
+{
+  "apiEndpoint": "https://abmusa.cdn.prismic.io/api/v2",
+  "libraries": ["essential-slices", "@/slices"],
+  "storybook": "http://localhost:8888",
+  "_latest": "0.1.0"
+}

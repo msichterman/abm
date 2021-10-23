@@ -1,8 +1,3 @@
-module.exports = {
-  images: {
-    domains: [
-      'i.scdn.co', // Spotify Album Art
-      'pbs.twimg.com', // Twitter Profile Picture
-    ],
-  },
-}
+const withTM = require('next-transpile-modules')(['next-slicezone', 'essential-slices']);
+
+module.exports = withTM();
