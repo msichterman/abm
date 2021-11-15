@@ -51,7 +51,7 @@ const features = [
   },
   {
     name: 'Car deals / Merchandise / Licensing / Logos',
-    description: 'Drive a new car off the lot, start selling your gear ',
+    description: 'Drive a new car off the lot, start selling your gear.',
     icon: KeyIcon,
   },
 ]
