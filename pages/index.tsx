@@ -9,7 +9,7 @@ export default function Home({ tweets }) {
   return (
     <Layout>
       <>
-        <section className="text-gray-700 my-12 px-4 sm:px-8 lg:px-14 max-w-7xl mx-auto">
+        <section className="text-gray-700 my-12 px-4 sm:px-8 lg:px-14 max-w-7xl mx-auto container">
           <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full my-16">
             <div className="text-center md:text-left w-full md:w-1/2">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
@@ -47,8 +47,8 @@ export default function Home({ tweets }) {
 
         <Benefits />
 
-        <div className="py-12 bg-white rounded-lg mt-16 border border-gray-300 px-4 sm:px-8 lg:px-14 max-w-7xl mx-auto container">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-14 mt-16 container">
+          <div className="py-12 bg-white rounded-lg border border-gray-300 px-4 sm:px-8 lg:px-14 mx-auto">
             <div className="lg:text-center">
               <h2 className="text-base text-red-600 font-semibold tracking-wide uppercase">
                 Join the family
@@ -126,7 +126,7 @@ export default function Home({ tweets }) {
 
 function Tweets({ tweets }) {
   return (
-    <div className="flex flex-col justify-center items-start max-w-2xl mx-auto my-16">
+    <div className="flex flex-col justify-center items-start max-w-2xl mx-auto my-16 px-4 sm:px-8 lg:px-14 container">
       <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl mb-4">
         <span className="block text-red-600">Keep an eye on our athletes!</span>
         <span className="block">ABM in the media.</span>
