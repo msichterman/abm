@@ -18,7 +18,7 @@ export default function Home({ tweets }) {
                   Marketing LLC
                 </span>
               </h1>
-              <p className="mt-3 text-gray-500 text-xl px-8 md:px-4">
+              <p className="mt-3 text-gray-500 text-xl px-8 md:px-0">
                 A student-athlete representation company assisting athletes in
                 maximizing their NIL opportunities through an active
                 representation model. We increase student-athletes’ earning
