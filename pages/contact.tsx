@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 export default function contact() {
   return (
     <Layout showBanner>
-      <div className="flex flex-col w-full items-center justify-center">
+      <div className="flex flex-col w-full items-center justify-center px-4 sm:px-8 lg:px-14 max-w-7xl mx-auto container">
         <h1 className="uppercase tracking-wide text-3xl lg:text-5xl font-extrabold block my-12">
           Contact us
         </h1>

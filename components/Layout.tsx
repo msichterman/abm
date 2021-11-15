@@ -55,7 +55,7 @@ Marketing LLC"
       <Navbar />
       {showBanner && (
         <img
-          className="object-cover object-center rounded-lg -px-4"
+          className="object-cover object-center"
           alt="hero"
           loading="lazy"
           src="/banner.jpg"
