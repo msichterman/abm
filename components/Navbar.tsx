@@ -5,7 +5,7 @@ import Link from 'next/link'
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="sticky top-0 shadow-md z-10">
+    <div className="sticky top-0 shadow-md z-50">
       <nav className="bg-gradient-to-r from-black to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex items-center justify-between h-20 w-full">

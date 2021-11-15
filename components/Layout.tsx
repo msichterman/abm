@@ -61,9 +61,7 @@ Marketing LLC"
           src="/banner.jpg"
         />
       )}
-      <main className="text-gray-700 px-4 sm:px-8 lg:px-14 max-w-7xl mx-auto container">
-        {children}
-      </main>
+      <main className="text-gray-700">{children}</main>
       <div>
         {showMailingList && <MailingList />}
         <Footer />
