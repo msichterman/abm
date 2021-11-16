@@ -56,8 +56,7 @@ export default function Home({ tweets }) {
                 Are you an athlete? Let's get in touch!
               </p>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                We are based out of the Historic Haymarket District in Lincoln,
-                Nebraska.
+                We increase student-athletes’ earning potential while managing their brands and personal businesses.
               </p>
             </div>
 
