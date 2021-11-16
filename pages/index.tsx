@@ -21,8 +21,7 @@ export default function Home({ tweets }) {
               <p className="mt-3 text-gray-500 text-xl px-8 md:px-0">
                 A student-athlete representation company assisting athletes in
                 maximizing their NIL opportunities through an active
-                representation model. We increase student-athletes’ earning
-                potential while managing their brands and personal businesses.
+                representation model.
               </p>
               <div className="mt-5 md:mt-8 md:flex justify-center md:justify-start w-full">
                 <div className="mx-6 md:mx-0">
