@@ -4,8 +4,9 @@ import { getTweets } from '../lib/twitter'
 import Layout from '../components/Layout'
 import Benefits from '../components/Benefits'
 import { OfficeBuildingIcon, AtSymbolIcon } from '@heroicons/react/outline'
+import { getAllFeatureItems } from '../lib/api'
 
-export default function Home({ tweets }) {
+export default function Home({ featureItems, tweets }) {
   return (
     <Layout>
       <>
@@ -44,7 +45,7 @@ export default function Home({ tweets }) {
           </div>
         </section>
 
-        <Benefits />
+        <Benefits featureItems={featureItems} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-14 mt-16 container">
           <div className="py-12 bg-white rounded-lg border border-gray-300 px-4 sm:px-8 lg:px-14 mx-auto">
@@ -138,6 +139,8 @@ function Tweets({ tweets }) {
 }
 
 export async function getStaticProps() {
+  const featureItems = await getAllFeatureItems();
+
   let tweets = await getTweets([
     '1428807037849329664',
     '1438576669988642816',
@@ -146,5 +149,5 @@ export async function getStaticProps() {
     '1446212840596152335',
   ])
 
-  return { props: { tweets } }
+  return { props: { featureItems, tweets } }
 }

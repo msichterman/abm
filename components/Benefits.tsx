@@ -56,7 +56,8 @@ const features = [
   },
 ]
 
-export default function Benefits() {
+export default function Benefits({ featureItems }) {
+  console.log(featureItems);
   return (
     <div className="bg-red-600 z-10 relative">
       <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
