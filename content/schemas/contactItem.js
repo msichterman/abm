@@ -1,3 +1,5 @@
+import unitedStates from '../unitedStates'
+
 export default {
     name: 'contactItem',
     title: 'Contact Item',
@@ -13,8 +15,11 @@ export default {
       {
         name: 'icon',
         title: 'Icon',
-        type: 'string',
-        description: 'Head over to https://heroicons.com and copy/paste the name of the desired icon. (e.g. academic-cap)',
+        type: 'iconPicker',
+        options: {
+          providers: ["hi"],
+          outputFormat: 'react',
+        },
         validation: Rule => Rule.required(),
       },
       {
@@ -50,6 +55,11 @@ export default {
         description: 'Please use the state\'s abbreviation (e.g. NE).',
         type: 'string',
         group: 'address',
+        options: {
+          list: [
+            ...unitedStates
+          ],
+        },
         hidden: ({document}) => !document?.addressLine1
       },
       {

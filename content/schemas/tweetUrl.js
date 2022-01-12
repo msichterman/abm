@@ -7,7 +7,7 @@ export default {
       {
         name: 'url',
         title: 'URL',
-        type: 'string',
+        type: 'url',
         description: 'Head over to https://twitter.com and copy/paste a tweet you want to feature',
         validation: Rule => Rule.required(),
       },

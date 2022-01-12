@@ -1,7 +1,5 @@
 import dynamic from 'next/dynamic';
 
-import { getPascalFromKebab } from '../lib/utils';
-
 export default function BenefitsSection({ featureItems }) {
   return (
     <div className="bg-red-600 z-10 relative">
@@ -18,11 +16,10 @@ export default function BenefitsSection({ featureItems }) {
         <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
           {featureItems.map(feature => {
             // Dynamically import the icon
-            const iconName = `${getPascalFromKebab(feature.icon)}Icon`;
             const Icon = dynamic(async () =>
               {
-                const mod = await import('@heroicons/react/outline');
-                return mod[iconName];
+                const mod = await import('react-icons/hi');
+                return mod[feature.icon.name];
               }
             );
 

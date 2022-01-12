@@ -7,8 +7,11 @@ export default {
       {
         name: 'icon',
         title: 'Icon',
-        type: 'string',
-        description: 'Head over to https://heroicons.com and copy/paste the name of the desired icon. (e.g. academic-cap)',
+        type: 'iconPicker',
+        options: {
+          providers: ["hi"],
+          outputFormat: 'react',
+        },
         validation: Rule => Rule.required(),
       },
       {
