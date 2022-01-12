@@ -1,10 +1,14 @@
-import Link from 'next/link'
-import Tweet from '../components/Tweet'
-import { getTweets } from '../lib/twitter'
-import Layout from '../components/Layout'
-import BenefitsSection from '../components/BenefitsSection'
-import ContactSection from '../components/ContactSection'
-import { getAllContactItems, getAllFeatureItems, getAllTweetUrls } from '../lib/api'
+import Link from 'next/link';
+import Tweet from '../components/Tweet';
+import { getTweets } from '../lib/twitter';
+import Layout from '../components/Layout';
+import BenefitsSection from '../components/BenefitsSection';
+import ContactSection from '../components/ContactSection';
+import {
+  getAllContactItems,
+  getAllFeatureItems,
+  getAllTweetUrls,
+} from '../lib/api';
 
 export default function Home({ featureItems, contactItems, tweets }) {
   return (
@@ -52,7 +56,7 @@ export default function Home({ featureItems, contactItems, tweets }) {
         <Tweets tweets={tweets} />
       </>
     </Layout>
-  )
+  );
 }
 
 function Tweets({ tweets }) {
@@ -63,11 +67,11 @@ function Tweets({ tweets }) {
         <span className="block">ABM in the media.</span>
       </h2>
 
-      {tweets.map((tweet) => (
+      {tweets.map(tweet => (
         <Tweet key={tweet.id} {...tweet} />
       ))}
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
@@ -75,7 +79,7 @@ export async function getStaticProps() {
   const contactItems = await getAllContactItems();
   const tweetUrls = await getAllTweetUrls();
 
-  let tweets = await getTweets(tweetUrls)
+  let tweets = await getTweets(tweetUrls);
 
-  return { props: { featureItems, contactItems, tweets } }
+  return { props: { featureItems, contactItems, tweets } };
 }
